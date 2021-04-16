@@ -1,0 +1,8 @@
+commit liberally to local repo
+push liberally to remote repo
+for the 101 course it is ok to use one repo
+later use repos for each project, they will tell me when
+
+dont nest repos
+
+#ANKI
