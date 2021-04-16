@@ -1,0 +1,5 @@
+cd rb101_programming_foundations/lesson1
+
+git.txt
+
+add local repo to github
