@@ -1,0 +1,6 @@
+
+
+don't ask questions that you can test yourself.
+let them know if you figure it out on your own and post answer for others.
+
+# constants are accessible from inside a method

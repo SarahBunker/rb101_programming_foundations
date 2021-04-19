@@ -1,0 +1,5 @@
+read all pinned threads for each lesson
+
+after completing a course assignment you can request a code review in lesson discusion forum
+https://launchschool.com/gists/8bbb0e2a
+  guidlines specific to code review, read through again when closer

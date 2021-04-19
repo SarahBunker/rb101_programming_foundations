@@ -2,4 +2,4 @@ cd rb101_programming_foundations/lesson1
 
 git.txt
 
-add local repo to github
+20 exercises (2 sets) per lesson

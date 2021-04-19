@@ -1,0 +1,11 @@
+split the code you have to learn from the logic you need to solve the problem seperetly
+
+PEDAC
+understand the Problem
+write Examples/test cases
+Data structure
+  how we represent the data 
+Algorithm
+  steps to convert input to output
+Code
+

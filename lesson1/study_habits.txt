@@ -1,0 +1,26 @@
+study with others
+  because it will help you practice for interviews
+  because it will help with future jobs
+  
+formal
+  RB100/100 several each week, space for 5
+  sign up on forum page
+
+informal
+  topic presentation
+  code example questions
+  pair problem solving
+  live coding practice
+  flash card quiz
+  
+https://launchschool.com/lessons/c82cd406/assignments/f1049f69
+  review for sharing code online
+
+The Speed of Mastery: My Pacing at Launch School
+  don't feel guilty not doing ANKI
+  take good notes
+  build a slip-shod house
+    go through the material fast
+    after finishing course go through the notes and seek for mastery
+  trust the curriculum
+  don't go down rabbit holes

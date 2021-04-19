@@ -1,0 +1,13 @@
+require 'date'
+
+puts Date.civil
+puts Date.civil(2016)
+puts Date.civil(2016, 5)
+puts Date.civil(2016, 5, 13)
+
+What will each of the 4 puts statements print?
+The first one goes back crazy far
+the next three start out
+1/1/2016 but puts it in the order year-month-day
+next adds the month 2016-5-1
+finally adds a day 2016-5-13

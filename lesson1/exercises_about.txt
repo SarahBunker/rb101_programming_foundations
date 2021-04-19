@@ -1,0 +1,17 @@
+20 exercises (2 sets) per lesson
+    skip if it covers material you don't know yet
+    return and review before assessment
+    don't need to do the advanced
+    use google as needed
+    
+Easy and medium are the level of the assessment
+advanced shows mastery
+
+solve easy without using to much Ruby documentation, muscle memory
+
+use ruby documentation for medium and advanced
+
+medium and advanced contain information not taught in course use documentation and google, skip and study solution as needed
+
+simplify after getting something that works
+

@@ -1,0 +1,28 @@
+File is an abstraction of a file object accessible by the program.
+the path methods return the path of the file as a string.
+
+what is the difference between file::path and file#path?
+#path
+  called by .path on the end of a file
+  doesn't normalize the name
+  
+::path
+  class method
+  called by .push(path text) returns a string
+  
+
+#############################################
+What they meant was what is the difference between calling on a instance or class method
+#path
+  instance method
+  called on an instance of the class, an object
+  
+  f = File.new("my-file.txt")
+  puts f.path
+  
+::path
+  class method called on the class
+  
+  puts File.path('bin')
+  
+################################################
