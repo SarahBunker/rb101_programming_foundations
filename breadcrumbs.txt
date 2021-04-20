@@ -5,3 +5,8 @@ cd rb101_programming_foundations/small_problems/documentation
 git.txt
 
 20 exercises (2 sets) per lesson
+
+
+building a shody house
+  starting from problem 6 in lesson 2
+  review before going to lesson 3

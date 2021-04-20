@@ -1,0 +1,1 @@
+in ruby true and false booleans are objects which means you can call methods on them

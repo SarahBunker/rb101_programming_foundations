@@ -1,0 +1,9 @@
+parenthesis are optional, this chapter will always use them
+puts and gets, call with module
+  Kernal.gets()
+  Kernal.puts()
+
+!! important to understand that all methods come from somewhere
+
+They are changing this for the first lesson but will go back after.
+Don't have to follow in my code
