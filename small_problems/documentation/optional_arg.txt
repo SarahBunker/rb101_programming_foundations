@@ -11,3 +11,12 @@ the next three start out
 1/1/2016 but puts it in the order year-month-day
 next adds the month 2016-5-1
 finally adds a day 2016-5-13
+
+###################
+the [] show that the arguements are optional
+
+In the following code which arguements are optional?
+civil([year=-4712[, month=1[, mday=1[, start=Date::ITALY]]]]) → date
+
+all of them, but because they are nested if you omit one then you have to omit all of the inner ones below it
+for example omitting month means omitting the start and day as well.

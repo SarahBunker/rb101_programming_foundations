@@ -1,5 +1,7 @@
 cd rb101_programming_foundations/lesson1
 
+cd rb101_programming_foundations/small_problems/documentation
+
 git.txt
 
 20 exercises (2 sets) per lesson
