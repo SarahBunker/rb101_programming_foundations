@@ -31,22 +31,48 @@ end
 print results
 =end
 
+=begin
 def get_num
   puts "What is the first number you would like to use?"
   num = gets.chomp
   return num
 end
+=end
+puts "What is the first number you would like to use?"
+num1 = gets.chomp.to_i
+puts "What is the 2nd number you would like to use?"
+num2 = gets.chomp.to_i
 
-num1 = 4
-num2 = 5
 
-#user_input = "add"
-#user_input = "subtract"
-#user_input = "multiply"
-user_input = "divide"
+good_inputs = ["add","subtract","multiply","divide","help","q"]
+
+def put_good_inputs(input)
+  arr = ["add","subtract","multiply","divide","help","q"]
+  arr.include?(input)
+end
+
+puts "what would you like to calculate? Type one of the following:"
+good_inputs.each{|x| puts x}
+
+
+user_input = gets.chomp.downcase
+
+if user_input == "divide" && num2 == 0
+  puts "ERROR. Can't devide by zero."
+  puts "Please start again"
+end
 #check that user input is one of the words
 #includes to check it is in an array of values
 #print list of acceptable values if they type help
+
+if user_input == "help"
+  puts "add: a + b"
+  puts "subtract: a - b"
+  puts "multiply: a * b"
+  puts "divide: a / b  NOTE can't divide by zero"
+  puts "help: list options and descriptions"
+  puts "q: quit calculator"
+end
 
 
 if user_input    == "add"
@@ -64,4 +90,7 @@ frills
 asking if user wants to perform another action
 adding non integer functions
 adding checking if input is an integer
+
+change if statments to case
+
 =end
