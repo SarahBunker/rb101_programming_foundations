@@ -1,0 +1,70 @@
+Formal Pseudo-Code
+
+keyword	    meaning
+----------------
+START	      start of the program
+SET	        sets a variable we can use for later
+GET	        retrieve input from user
+PRINT     	displays output to user
+READ	      retrieve value from variable
+IF/ELSE IF  show conditional branches in logic
+/ELSE	
+WHILE	      show looping logic
+END	        end of the program
+
+For example, write out pseudo-code (both casual and formal) that does the following:
+
+a method that returns the sum of two integers
+a method that takes an array of strings, and returns a string that is all those strings concatenated together
+a method that takes an array of integers, and returns a new array with every other element
+
+------------------------------------------
+a method that returns the sum of two integers
+welcome user
+Get the input from the user for first num
+get second input
+calculate result
+print result
+
+START
+PRINT welcome
+GET   num1
+GET   num2
+calculate result
+PRINT result
+END
+
+------------------------------------
+a method that takes an array of strings, and returns a string that is all those strings concatenated together
+initialize empty string
+input array of strings
+iterate
+add element to string by removing from array
+return array
+
+START
+PRINT welcome
+SET  string to empty
+GET  array
+WHILE there are still elements in array
+    take of element and add to string
+PRINT result
+END
+
+-----------------------------------------
+a method that takes an array of integers, and returns a new array with every other element
+
+input is an array
+output is a new array with every other element (array is half as big as first one)
+start with an empty new array
+iterate through old array by storing every other value
+return new array
+
+START
+SET iterator (using .each with index you could use the index as the iterator)
+WHILE less then length of array
+  loop through the values and take only the ones where the iterator is odd
+  store those values in array
+return array
+PRINT return
+END

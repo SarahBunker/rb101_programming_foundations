@@ -78,3 +78,8 @@ loop do
   end
   enter_bar
 end
+
+=begin
+could change to allow float
+could change array to constant
+=end
