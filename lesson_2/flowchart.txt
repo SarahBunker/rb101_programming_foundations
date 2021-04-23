@@ -1,0 +1,10 @@
+imperative/procedural way
+  map out step by step
+  
+declarative way
+  using a method that encapsulates a basic concept
+  ex .each
+
+on interview coding assements lay out logic before coding
+pseudo code straight forward way to do that
+practice this before assements

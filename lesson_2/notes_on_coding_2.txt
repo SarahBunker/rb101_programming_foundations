@@ -1,0 +1,22 @@
+use new lines to separate code
+
+don't write codes that have side effects (mutates or prints something) and has a meaningful return
+
+Naming methods
+  if method prints values use display_ or print_ in the name
+  design methods so they are black box, the name tells you what they do, not how they do it
+  
+Don't mutate caller during iteration
+  typical to mutate the elements of caller, but not the caller itself
+  don't mutate the collection you are iterating over or you will get unexpected results
+  
+Choose appropriate block name variables to avoid variable shadowing
+
+Don't use assignment in a conditional even if it is on purpose, because it is unclear if it is a bug or on purpose
+  if you need to get the conditional value from somewhere else do it the line before the conditional, and then use it in the code
+
+Use an _ for unused block parameters
+  printing the same string for each element in the array, but the element doesn't matter
+  
+
+  

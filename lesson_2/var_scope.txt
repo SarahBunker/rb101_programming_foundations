@@ -1,0 +1,75 @@
+the do..end or {} that follows a method invocation such as .each is a block
+blocks like this are arguements passed to the method
+blocks create a new scope for variables
+  variables initialized inside a block can't be accessed from outside the block
+  variables initialized outside a block can be accessed from inside the block
+  changes from inside a block can affect outer variables
+  
+variable shadowing:
+  variable named n in outer scope
+  using x in inner scope to capture block parameter
+  inner scope will ignore outer scope n
+    use block parameter
+    doesn't change outer parameter
+  use longer variable names to preven shadowing because usually not what was intended
+  
+Blocks can access local variables in outer scope
+methods can't
+
+# outer scope variables can be accessed by inner scope
+-----------------------------------------------------
+a = 1         # outer scope variable
+
+loop do       # the block following the invocation of the `loop` method creates an inner scope
+  puts a      # => 1
+  a = a + 1   # "a" is re-assigned to a new value
+  break       # necessary to prevent infinite loop
+end
+
+puts a        # => 2  "a" was re-assigned in the inner scope
+
+# a method definition can't access local variables in another scope
+-----------------------------------------------------
+a = 'hi'
+
+def some_method
+  puts a
+end
+
+# invoke the method
+some_method     # => NameError: undefined local variable or method `a' for main:Object
+
+local variables that are not initialized inside a method definition must be defined as parameters.
+# a method definition can access objects passed in
+--------------------------------------------------------------------------
+def some_method(a)
+  puts a
+end
+
+some_method(5)  # => 5
+
+
+
+
+#################################
+Constants and scope
+- accessible from inside a method even if initialized outside the method
+- blocks can access constants initialized outside the block (same as local variables)
+- accessible from outside a block even if initialized inside the block
+
+
+lexical scope < explained later
+
+
+44444444444444444444444444444444
+more variable scope
+
+can use the return value of a block to do some other action
+  the return of the block given to map is stored in a new array
+
+block given to method can access outer scope variables
+
+methods won't use a block unless their is a yield statment in the method (more on yield later)
+  using a block during method invocation gives greater flexibility because blocks have access to wider scope
+
+

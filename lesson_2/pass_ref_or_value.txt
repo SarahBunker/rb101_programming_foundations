@@ -1,0 +1,123 @@
+what happens to objects passed to methods?
+  are they references to the original object "references"
+    can change outer value
+  or are then copies of the original object "values"
+    can't change outer value
+    
+Ruby is both pass by value and pass by reference
+  when a method is destructive, mutates the caller then it is pass by reference
+  
+
+.object_id ~ retrieves the unique object id for the object
+
+setting to variables equal to each other means that when one of the variables is used to mutate the value
+it is changed for the other variable as well
+
+reassignment of one of those variables does however create a new space for the informtion that the other variable doesn't
+link to, it will still link to the old value
+
+C++ strings are mutable
+python strings are not mutable
+
+Ruby immutable objects
+  boolean
+  numbers
+  
+  you can reassign a variable to another boolean or number, but the number can't change
+  
+  other immutable objects
+    nil
+    range (1..10)
+  
+  you can create a class that is not mutable by not creating a method to change it
+  
+setter methods
+  allow you to change the value of an object
+  use a name like "something[]"
+  array#[] = 
+  
+  setters often show up in classes
+
+-----------
+class Dog
+  def name=(new_name)
+    name = new_name
+  end
+end
+
+dog = Dog.new
+dog.name = "Fido"    # calls setter method for `name` attribute
+
+
+
+#################################################
+Mutating and non mutating methods
+
+a method can mutate the caller and not the arguement and vicversa
+  most methods that mutate will mutate the caller, not the arguement
+  
+methods on immutable objects are non mutating to that object
+
+Assignment is non mutating
+  A. binds an object to a variable
+  A a variable to a new object doesn't mutate the first object, it just changes what object is bound to the variable
+  
+  =,+=,-=,*=,/=
+  
+  Setter methods in a class are not assignments and usually mutate the caller
+  
+  This time, though we assigned a reference to value, we end up with both s and t referring to the same object. The
+  reason for this is that String#upcase! returns a reference to its caller, value. Since the reference returned by
+  value.upcase! is the same, albeit mutated, String we started with, the assignment effectively rebinds value back
+  to the object it was previously bound to; nothing is mutated by the assignment.
+  
+  .upcase! returns a reference to its caller
+  This rebinds value back to the object it was previously bound to. Nothing is mutated by the assignment
+  it was mutated by the .upcase!
+  
+MUTATING METHODS
+  
+.strip ~ removes leading and trailing white space
+[] = 
+<<
+setter methods
+
+mutating methods like indexed assignement mutate the object, they do not change assignment/binding
+
+indexed assignments []=
+  the collection inclosing the objects remains referenced to the same object
+  the collection element for example a[1] is bound to a new object
+  
+Concatenation is mutating <<
+  += is not mutating but << is
+  mutates the caller
+  some classes use << for other things, that may or may not be mutatting
+  
+Setters
+  mutate the state of the object
+  something = value    syntax
+  state mutated by mutating or reassigning an instance variable
+  
+
+
+
+Mental Model
+  ! usually indicates a mutator
+  
+  setters and index assignements always mutating
+  
+  assignement operators (=,+=...) always non mutating
+    can break the binding between an argument name and the object it references
+    
+
+######################################################
+Object Passing in Ruby
+
+Review
+
+Ruby uses variables to reference objects by providing an id that links to the value of the object.
+Mutable means that the method either changes the caller or the arguement, usually the caller
+Immutable means that the value referenced by the variable can not be changed. If the variable changes values it is
+  because the variable refferences a different object and is no longer bound to the first objec
+  
+
