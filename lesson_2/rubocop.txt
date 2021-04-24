@@ -1,0 +1,31 @@
+rubocop takes ruby file as arguement
+  $ rubocop test.rb
+  
+or create GemFile with these contents, in the same folder as the file you want to run rubocop on
+source 'https://rubygems.org'
+
+group :development do
+  gem 'rubocop', '0.86.0'
+end
+
+while in the folder with the GemFile, and the file you want to test, run
+bundle install
+bundle exec rubocop file.rb
+
+Break Down of Output
+how many files inspected
+
+C: convention
+W: warning
+E: error
+F: fatal error
+
+listed offenses appear sequentially in same order they appeared in the file.
+file name, line number, column number
+C: for convention
+offense message
+actual code with offense
+
+To show which cop complained use :
+
+rubocop hello.rb --format offenses
