@@ -11,5 +11,4 @@ building a shody house
   starting from problem 6 in lesson 2
   review before going to lesson 3
   
-https://launchschool.com/lessons/a0f3cd44/assignments/8e770c8a
-configuring rubocop
+https://launchschool.com/lessons/a0f3cd44/assignments/fcd8a299
