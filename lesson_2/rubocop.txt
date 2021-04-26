@@ -29,3 +29,11 @@ actual code with offense
 To show which cop complained use :
 
 rubocop hello.rb --format offenses
+
+
+
+
+we can create a .rubocop.yml file with configuration instructions for how strict we want the cop to be.
+  hidden file so starts with ..
+  usually create one in projects root directory
+  we will create one in same directory as hello.rb file
