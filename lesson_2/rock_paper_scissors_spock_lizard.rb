@@ -1,6 +1,7 @@
 VALID_CHOICES = %w(rock paper scissors spock lizard)
-VALID_CHOICES_LETTER = %W(r p s l)
+VALID_CHOICES_LETTER = %W(r p sc sp l)
 
+score_array = [0,0]
 def prompt(message)
   puts ("=> #{message}")
 end
@@ -23,26 +24,49 @@ def display_results(choice,computer_choice)
   end
 end
 
-choice = ''
-loop do
-  loop do
-    prompt("choose one: #{VALID_CHOICES.join(', ')}")
-    choice = gets.chomp
-    break if VALID_CHOICES.include?(choice)
-    if choice == "s"
-      #start here, fix me
-    end
-    prompt("That's not a valid choice.")
+def update_results(choice,computer_choice)
+  if win?(choice,computer_choice)
+    score_array[0] += 1
+  elsif win?(computer_choice,choice)
+    score_array[1] += 1
+  else
+    prompt("It's a tie.")
   end
-  
-  computer_choice = VALID_CHOICES.sample
-  
-  prompt("You chose: #{choice}; Computer chose: #{computer_choice}")
-  
-  display_results(choice,computer_choice)
-  
-  prompt("Do you want to play again?")
-  answer = gets.chomp
-  break unless answer.downcase.start_with?("y")
 end
 
+choice = ''
+loop do # match loop
+  prompt("Win 5 games to win the match")
+  loop do # game loop
+    loop do
+      prompt("choose one: #{VALID_CHOICES.join(', ')}")
+      prompt("or choose from the shortened options: #{VALID_CHOICES_LETTER.join(', ')}")
+      choice = gets.chomp
+      if VALID_CHOICES_LETTER.include?(choice)
+        case choice
+        when 'r' then choice = "rock"
+        when 'p' then choice = "paper"
+        when 'sc' then choice = "scissors"
+        when 'sp' then choice = "spock"
+        when 'l'  then choice = "lizard"
+        end
+      end
+      break if VALID_CHOICES.include?(choice)
+      prompt("That's not a valid choice.")
+    end
+    
+    computer_choice = VALID_CHOICES.sample
+    
+    prompt("You chose: #{choice}; Computer chose: #{computer_choice}")
+    
+    display_results(choice,computer_choice)
+    update_results(choice,computer_choice)
+    
+    prompt("The score is player: #{score_array[0]} computer: #{score_array[1]}")
+    if score_array[0]
+    prompt("Do you want to play another game?")
+    answer = gets.chomp
+    break unless answer.downcase.start_with?("y")
+    
+  end
+end

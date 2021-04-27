@@ -11,4 +11,6 @@ building a shody house
   starting from problem 6 in lesson 2
   review before going to lesson 3
   
-https://launchschool.com/lessons/a0f3cd44/assignments/fcd8a299
+https://launchschool.com/lessons/a0f3cd44/assignments/4f8be124
+
+working on rps bonus features, start breaking out of inner loop if score is 5
