@@ -1,0 +1,40 @@
+don't rely on precendence
+  2+ operators? use parenthesis to make it clearer
+  
+higher precendence binds to its operands more tightly
+
+precendence is not just the order of evalutions
+  in arithmatic expressions Ruby goes through and evaluates all the methods (stuff that can be evaluated without operators)
+  then it uses precendence to determine what order to evaluate the result
+  
+
+-----------------------------------------------------
+p array.map { |num| num + 1 }      #  outputs [2, 3, 4]
+                                   #  => [2, 3, 4]
+                                   
+p array.map do |num|
+  num + 1                   #  outputs #<Enumerator: [1, 2, 3]:map>
+end                           #  => #<Enumerator: [1, 2, 3]:map>
+
+do...end binds slightly less tightly
+so 
+p array.map is evaluated first which returns an enumerator, the block is ignored
+
+
+
+-----------------------------------------------------
+tap takes the calling object and passed it to the block argument, then returns that same object.
+print the object inside that block.
+
+mapped_and_tapped = mapped_array.tap { |value| p 'hello' }   # ‘hello’
+
+mapped_and_tapped                                            # => [2, 3, 4]
+
+
+
+One other use case for this method is to debug intermediate objects in method chains.
+
+(1..10)                 .tap { |x| p x }   # 1..10
+ .to_a                  .tap { |x| p x }   # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ .select {|x| x.even? } .tap { |x| p x }   # [2, 4, 6, 8, 10]
+ .map {|x| x*x }        .tap { |x| p x }   # [4, 16, 36, 64, 100]

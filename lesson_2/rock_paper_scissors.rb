@@ -63,4 +63,9 @@ end
 
 puts ""
 puts "In today's match against the computer you #{they___against_computer}."
-  
+
+=begin
+
+array_name.join(", ") ~ lists all elements in array combined with a ", "
+
+=end

@@ -1,0 +1,34 @@
+read error message
+  determine the error message from the stack trace
+  don't get frustrated, look for solutions that will be most of your job is solving problems
+use online resources
+  search engine
+  stack overflow
+  documentation
+  
+Steps to debug (some until you hone your own)
+  reproduce the error
+  determine boundaries of the error
+  trace code backwards to find out where error starts
+  understand problem well
+  implement fix (one problem at a time)
+  test fix
+
+other debugging techniques
+  line by line > usually the error is in the details not in misunderstanding something
+  rubber duck > explain what code is supposed to do
+  walk away > leave the problem after you understand it and let back of brain work on it
+  pry
+  
+PRY
+require "pry" (at top of doc)
+
+binding.pry (insert anywhere in code)
+
+Ctrl + D (to continue after stopping to examine code)
+
+exit-program (exits the program, useful when binding was used in a loop)
+
+
+>> use pry to avoid spraying code with puts statments
+

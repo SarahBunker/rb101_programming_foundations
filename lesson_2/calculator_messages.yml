@@ -1,0 +1,11 @@
+welcome: "Welcome to Calculator! Enter your name:"
+valid_name: "Make sure to enter a valid name."
+
+# these values become a ruby hash in the ruby file
+
+num_prompt_1: "What is the first number?"
+num_error: "Error. Please enter an integer or decimal."
+num_prompt_2: "What is the second number?"
+op_prompt: "Choose 1, 2, 3, or 4"
+repeat_prompt: "Do you want to perform another calculation? (Y to calculate again)"
+bye: "Thanks for coming."
