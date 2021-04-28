@@ -1,5 +1,9 @@
+require "pry"
 VALID_CHOICES = %w(rock paper scissors spock lizard)
 VALID_CHOICES_LETTER = %w(r p sc sp l)
+WINNERS_HASH = {  rock: %w(lizard scissors), paper: %w(rock spock),
+                  scissors: %w(lizard paper), spock: %w(rock scissors),
+                  lizard: %w(paper spock) }
 
 score_array = [0, 0]
 def prompt(message)
@@ -7,11 +11,7 @@ def prompt(message)
 end
 
 def win?(player1, player2)
-  (player1 == "rock" && (player2 == "lizard" || player2 == "scissors")) ||
-    (player1 == "paper" && (player2 == "rock" || player2 == "spock")) ||
-    (player1 == "scissors" && (player2 == "lizard" || player2 == "paper")) ||
-    (player1 == "spock" && (player2 == "rock" || player2 == "scissors")) ||
-    (player1 == "lizard" && (player2 == "paper" || player2 == "spock"))
+  WINNERS_HASH[player1.to_sym].include?(player2)
 end
 
 def display_results(choice, computer_choice)
@@ -37,7 +37,8 @@ loop do # match loop
   prompt("Win 5 games to win the match")
   loop do # game loop
     loop do
-      prompt("choose one: #{VALID_CHOICES.join(', ')}")
+      prompt("choose one:
+        #{VALID_CHOICES.join(', ')}")
       prompt("or choose from the shortened options:
         #{VALID_CHOICES_LETTER.join(', ')}")
       choice = gets.chomp
