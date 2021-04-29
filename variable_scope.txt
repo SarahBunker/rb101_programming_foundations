@@ -1,0 +1,71 @@
+Inner scope can access outer scope variables.
+Inner scope can change outer scope variables.
+Outer scope can't access inner scope variables.
+Peer scopes don't conflict. > inner scopes can't access other inner scopes.
+
+variable shadowing. > when an inner and outer scope have the same variable, the inner can't change the outer, the inner will use whatever the inner variable is
+  ex 1
+  avoid by choosing descriptive variable names
+
+method
+  - can only access variable initialized inside the method
+  - or variables defined as parameters
+
+constants
+  - able to cross scope boundaries
+  - lexical scope make more sense later
+
+
+
+things that create an inner scope
+  each {} or do/end
+  times
+  method invocation followed by a block
+
+things that don't create an inner scope
+  for...do/end
+  
+things that create a self contained scope
+  method
+    can only access variable initialized inside the method
+    or variables defined as parameters
+  
+-----------------------------------------
+ex 1 variable shadowing
+
+n = 10
+
+[1, 2, 3].each do |n|
+  puts n
+end
+
+puts uses the block parameter n and disregards the outer scope n
+=>  1
+    2
+    3
+
+#################################################
+Method invocation vs definition
+
+Blocks are arguements
+  block called by method during invocation acts as an argument to the method
+  
+keyword yield
+  executes block in method
+  
+method definition
+  cannot directly access local variables initialized outside the method definition
+  cannot reassign those variables
+  variables passed in as arguements > allows access local variables initialized outside the method definition
+  def..end
+  set scope for local variables
+
+method invocation
+  block
+    can access local variables initialized outside the block
+    can reassign those variables
+  uses scope set by method definition
+  block {..} or do..end is part of method invocation
+  
+
+
