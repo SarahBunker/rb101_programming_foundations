@@ -85,3 +85,8 @@ loop do
   puts name
   break
 end
+
+=begin
+what is !! and what does it do?
+if is an expression and doesn't create a different scope
+=end

@@ -1,0 +1,14 @@
+
+###############
+YAML::load_file
+
+load_file(filepath) ~ loads a documents from the file located at the file path
+  returns the yaml as a ruby object or fallback return value which defaults to false
+
+require 'yaml'
+MESSAGES = YAML.load_file('calculator_messages.yml')
+
+this yaml was in the same folder as the calculator problem so I could just write it as the file name
+It returned a ruby hash so I just used MESSAGES[symbol_name] to access the values
+
+The yaml documentation doesn't have a lot of info, but it does talk about psych which you can use to get to info about load_file

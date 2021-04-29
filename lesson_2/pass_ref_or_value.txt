@@ -121,3 +121,18 @@ Immutable means that the value referenced by the variable can not be changed. If
   because the variable refferences a different object and is no longer bound to the first objec
   
 
+##################################################
+second set of notes
+
+-----------------------------------------
+method not variable shadowing
+
+def change_name(name)
+  name = 'bob'      # does this reassignment change the object outside the method?
+end
+
+name = 'jim'
+change_name(name)
+puts name           # => jim
+
+name is not accessible to the method so not variable shadowing
