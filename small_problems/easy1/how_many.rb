@@ -16,3 +16,27 @@ def count_occurrences(vehicles)
 end
 
 count_occurrences(vehicles)
+
+=begin
+
+solution
+
+def count_occurrences(array)
+  occurrences = {}
+
+  array.uniq.each do |element|
+    occurrences[element] = array.count(element)
+  end
+
+  occurrences.each do |element, count|
+    puts "#{element} => #{count}"
+  end
+end
+
+
+
+
+
+array#count counts the number of elements with same value
+iterate over each unique element
+=end
