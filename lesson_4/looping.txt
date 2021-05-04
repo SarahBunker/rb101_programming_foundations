@@ -1,0 +1,7 @@
+.class ~ method which returns the name of the calling class
+
+4 elements of loop
+loop
+counter
+way to retrieve current value
+way to exit loop

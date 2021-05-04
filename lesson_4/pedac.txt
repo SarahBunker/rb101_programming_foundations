@@ -1,0 +1,236 @@
+P understand the Problem
+E examples/text cases
+D Data structure
+A Algorithm
+C Code
+
+saves time, solves more complex problems more efficiently
+
+this guide focuses on understanding the problem and data structure/algorithym
+examples/test cases provided on first assessment
+
+
+################
+Understanding the problem
+1) read the problem
+2) check the test cases if any
+3) if any part of the problem is unclear ask the interviewere or problem requester to clarify
+
+Questions you might have.
+empty strings
+words remain the same if they already use uppercase?
+input validation?
+should capitilization matter? (mom vs Mom)
+return same string or new string?
+
+write down inputs and outputs
+describe all rules, explicit and implicit requirements
+
+# input: string
+# output: string (not the same object)
+# rules:
+#      Explicit requirements:
+#        - every palindrome in the string must be converted to
+#          uppercase. (Reminder: a palindrome is a word that reads
+#          the same forwards and backward).
+#        - Palindromes are case sensitive ("Dad" is not a palindrome, but "dad" is.)
+
+#      Implicit requirements:
+#        - the returned string shouldn't be the same string object.
+#        - if the string is an empty string, the result should be an empty
+#          string
+
+
+##########################################
+Data Structure/Algorithm
+often paired because data influences the algorithym
+
+# PROBLEM:
+
+# Given a string, write a method `palindrome_substrings` which returns
+# all the substrings from a given string which are palindromes. Consider
+# palindrome words case sensitive.
+
+# Test cases:
+
+# palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
+# palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
+# palindrome_substrings("palindrome") == []
+# palindrome_substrings("") == []
+
+----------------------------------
+Understanding the problem
+input: string
+output: array of substrings
+explicit rules
+  words are case sensitive (dad != Dad, and Dad is not a palidrome)
+  (MISSED RULE) return only substrings that are palidromes
+implicit rules
+  all substrings includes pallidromes within pallidromes
+  no pallidromes returns an empty array
+  an empty string returns an empty array
+
+  list is from largest to smallest, or in order they are found?
+  
+-------------------
+Algorithm
+# Algorithm:                                 # High Level
+#  - initialize a result variable to an empty array
+#  - create an array named substring_arr that contains all of the
+#    substrings of the input string that are at least 2 characters long.
+#  - loop through the words in the substring_arr array.
+#  - if the word is a palindrome, append it to the result
+#    array
+#  - return the result array
+
+misses information about the hard part of creating substrings and checking if palidrome
+
+def palindrome_substrings(str)               # Code from High level
+  result = []
+  substrings_arr = substrings(str)
+  substrings_arr.each do |substring|
+    result << substring if is_palindrome?(substring)
+  end
+  result
+end
+
+                                            # algorithym for smaller problem
+# for each starting index from 0 through the next to last index position
+  # for each substring length from 2 until there are no substrings of that length
+    # extract the substring of the indicated length starting at the indicate index position
+  # end of inner loop
+# end of outer loop.
+
+
+                                            # updated algorithym
+# - create an empty array called `result` that will contain all required substrings
+# - create a `starting_index` variable (value `0`) for the starting index of a substring
+# - start a loop that iterates over `starting_index` from `0` to the length of the string minus 2
+#   - create a `num_chars` variable (value `2`) for the length of a substring
+#   - start an inner loop that iterates over `num_chars` from `2` to `string.length - starting_index`
+#     - extract a substring of length `num_chars` from `string` starting at `starting_index`
+#     - append the extracted substring to the `result` array
+#     - increment the `num_chars` variable by `1`
+#   - end the inner loop
+#   - increment the `starting_index` variable by `1`
+# - end the outer loop
+# - return the `result` array
+
+def substrings(str)                         #sample code for substring method
+  result = []
+  starting_index = 0;
+
+  while (starting_index <= str.length - 2)
+    num_chars = 2
+    while (num_chars <= str.length - starting_index)
+      substring = str.slice(starting_index, num_chars)
+      result << substring
+      num_chars += 1
+    end
+    starting_index += 1
+  end
+  result
+end
+
+                                            # palidrome algorithym and code
+# - Inside the `is_palindrome?` method, check whether the string
+#   value is equal to its reversed value. You can use the
+#   String#reverse method.
+
+def is_palindrome?(str)
+  return str == str.reverse
+end
+
+
+-------------------------------------------------------------------
+complete algorithym and code
+
+# input: a string
+# output: an array of substrings
+# rules: palindrome words should be case sensitive, meaning "abBA"
+#        is not a palindrome
+
+# Algorithm:
+#  substrings method
+#  =================
+#    - create an empty array called `result` that will contain all required substrings
+#    - create a `starting_index` variable (value `0`) for the starting index of a substring
+#    - start a loop that iterates over `starting_index` from `0` to the length of the string minus 2
+#      - create a `num_chars` variable (value `2`) for the length of a substring
+#      - start an inner loop that iterates over `num_chars` from `2` to `string.length - starting_index`
+#        - extract a substring of length `num_chars` from `string` starting at `starting_index`
+#        - append the extracted substring to the `result` array
+#        - increment the `num_chars` variable by `1`
+#      - end the inner loop
+#      - increment the `starting_index` variable by `1`
+#    - end the outer loop
+#    - return the `result` array
+
+#  is_palindrome? method
+#  =====================
+# - Inside the `is_palindrome?` method, check whether the string
+#   value is equal to its reversed value. You can use the
+#   String#reverse method.
+
+#  palindrome_substrings method
+#  ============================
+#  - initialize a result variable to an empty array
+#  - create an array named substring_arr that contains all of the
+#    substrings of the input string that are at least 2 characters long.
+#  - loop through the words in the substring_arr array.
+#  - if the word is a palindrome, append it to the result
+#    array
+#  - return the result array
+
+def substrings(str)
+  result = []
+  starting_index = 0;
+
+  while (starting_index <= str.length - 2)
+    num_chars = 2
+    while (num_chars <= str.length - starting_index)
+      substring = str.slice(starting_index, num_chars)
+      result << substring
+      num_chars += 1
+    end
+    starting_index += 1
+  end
+  result
+end
+
+def is_palindrome?(str)
+  str == str.reverse
+end
+
+def palindrome_substrings(str)
+  result = []
+  substrings_arr = substrings(str)
+  substrings_arr.each do |substring|
+    result << substring if is_palindrome?(substring)
+  end
+  result
+end
+
+p palindrome_substrings("supercalifragilisticexpialidocious"); # ["ili"]
+p palindrome_substrings("abcddcbA");   # ["bcddcb", "cddc", "dd"]
+p palindrome_substrings("palindrome"); # []
+p palindrome_substrings("");           # []
+
+
+==============================================================================
+-----------------------------------------------------------------------------
+===============================================================================
+Take aways
+` you don't have to write all pseudocode before starting to code
+    after writing higher level code we came back to write the methods
+`don't have to do formal pseudocode step
+`be able to write in English what you want the code to do before coding
+
+
+#############################################
+Testing Frequently
+not properly part, however do early and often
+
+each time you write code that is testable, test it
+  helps to find bugs early when they are easier to fix
+  
