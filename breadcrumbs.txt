@@ -1,16 +1,18 @@
-cd rb101_programming_foundations/lesson_2
-
-cd rb101_programming_foundations/small_problems/documentation
-
-git.txt
-
+-----------------------------------------
 20 exercises (2 sets) per lesson
 
+practice problems
+cd rb101_programming_foundations/small_problems/easy3
 
+to catch up complete set 6
+
+
+----------------------------------------
 building a shody house
-  starting from problem 6 in lesson 2
-  review before going to lesson 3
+  learn material quickly
+  review lessons throughly
   
-https://launchschool.com/lessons/a0f3cd44/assignments/4f8be124
+-----------------------------------------------
+/rb101_programming_foundations/lesson_4/collection_basics.rb
+cd rb101_programming_foundations/lesson_4
 
-working on rps bonus features, start breaking out of inner loop if score is 5
