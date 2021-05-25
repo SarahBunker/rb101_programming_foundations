@@ -2,7 +2,7 @@
 20 exercises (2 sets) per lesson
 
 practice problems
-cd rb101_programming_foundations/small_problems/easy3
+cd rb101_programming_foundations/small_problems/easy4
 
 to catch up complete set 6
 
