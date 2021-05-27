@@ -1,4 +1,4 @@
-MAX_COLUMN_LENGTH = 80
+MAX_COLUMN_LENGTH = 40
 MAX_TEXT_LENGTH = MAX_COLUMN_LENGTH - 4
 
 def print_message(length_column,array)
@@ -42,3 +42,6 @@ print_in_box("Element Reference — Returns the element at index, or returns a s
 print_in_box("Element Reference — Returns the element at index, or returns a subarray starting at the start index and continuing for length elements, or returns a subarray specified by range of indices.1234567890123456789012345678901234567890")
 
 print_in_box("Hello World")
+
+print_in_box("To be or not to be. That is the question. Whether tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles and by opposing them.")
+

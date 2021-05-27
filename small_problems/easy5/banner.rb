@@ -45,6 +45,8 @@ print_in_box("Hello World")
 
 print_in_box('To boldly go where no one has gone before.')
 
+print_in_box("The earth smiles in flowers.")
+
 =begin
 SOLUTION
 def print_in_box(message)
