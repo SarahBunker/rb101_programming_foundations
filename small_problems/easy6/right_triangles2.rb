@@ -44,6 +44,19 @@ def triangle(num)
 end
 =end
 
+=begin #### corner upper left
+def triangle(num)
+  spaces = 0
+  stars = num                              #changed initial values
+
+  num.times do |n|
+    puts ('*' * stars) + (' ' * spaces)    
+    spaces += 1
+    stars -= 1 
+  end
+end
+=end
+
 
 =begin
 in: n, up/down, left/right
@@ -63,22 +76,34 @@ def triangle(num,up_b,left_b)
 
   num.times do |n|
     if left_b
-      puts ('*' * stars)  + (' ' * spaces)
-      spaces += 1
-      stars -= 1 
+      puts ('*' * stars ) + (' ' * spaces)
     else
-      puts (' ' * spaces) + ('*' * stars)
+      puts (' ' * spaces) + ('*' * stars )
+    end
+    
+    if up_b
+      spaces += 1
+      stars -= 1
+    else
       spaces -= 1
       stars += 1
     end
   end
 end
 
-
+puts "corner upper left"
 triangle(4,true,true)
 
+puts "corner upper right"
 triangle(4,true,false)
 
+puts "corner lower left"
 triangle(4,false,true)
 
+puts "corner lower right"
 triangle(4,false,false)
+
+
+=begin
+the error from yesterday was the incrementation in the loop was based on up vs down not left vs right.
+=end

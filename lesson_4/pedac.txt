@@ -234,3 +234,6 @@ not properly part, however do early and often
 each time you write code that is testable, test it
   helps to find bugs early when they are easier to fix
   
+PEDAC process is not linear
+don't be afraid to go back to algorithym solving mode
+don't problem solve while implementing code, go back to algorithym mode
