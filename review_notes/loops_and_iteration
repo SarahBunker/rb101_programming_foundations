@@ -1,0 +1,72 @@
+loop do... end            #must include a break statement
+while Boolean ... end     #evaluate until condition is false
+until Boolean ... end     #evaluate until condition is true
+for i in range ... end    #typically used to iterate over a collection (for example a range, or aray)
+Num.times                 #counts from 0 to 0ne less then the specified number
+
+break     #exits current loop
+next      #goes to next iteration imediately, skipping the rest of the current iteration 
+
+loop basics
+basics of looping: a loop, a counter, a way to retrieve the current value, and a way to exit the loop
+
+counter = 0
+loop do
+  break if counter == numbers.size
+  puts numbers[counter]
+  counter += 1
+end
+
+## Basic format to get user input
+loop do
+  puts "Enter input"
+  answer = gets.chomp
+  break if answer == "yes"
+  puts "incorrect answer. please enter yes"
+end
+
+  - the error message is after the break statement
+
+name convention in for loops
+for friend in friends
+for cat in cats
+etc
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22
+Iteration Methods
+
+use a range to easily get an index without initializing it
+example
+
+(1..row_num).each do |current_row_number|
+  rows << create_row(current_row_number)
+end
+
+.each takes the place of the basic loop returns original array or hash
+  # Iteration
+  * doesn't consider return value of block
+  * returns original array
+  * array has same length of original
+.select ~ selects the truthy values
+  # Selection
+  * considers the truthiness of the return value of the block
+  * returns a new collection
+  * new collection has same or less length
+  takes the place of loop for selection returns truthy values of the block
+    "puts num" inside block will return an empty array because the block will never be truthy
+  num +2 would return a new array, that is a copy of the original array
+    num + 2 is truthy so all iterations are truthy and the full array is returned
+.map used for transformations
+  # Transformations
+  * uses return value of block for new array
+  * returns a new collection
+  * new collecion has same length as original
+  takes value from block and places it in a new array
+  
+  when used on a hash returns an array
+  
+.each
+  > defined in array or method class
+.map and .select
+  > this method comes from enumerable class which is made avalible to the array and hash class
+

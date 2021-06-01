@@ -1,0 +1,13 @@
+.include? == .key? == .has_key?
+
+.value? == has_value?
+
+.map (from enumerable)
+  returns an array of the values returned by the block
+  
+.delete_if
+  deletes key value pairs for which the block returns true
+  
+.keep_if
+  deletes the key value pairs that the block returns false (the ones that return true are kept)
+  similar to .select!

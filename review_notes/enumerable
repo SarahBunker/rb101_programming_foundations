@@ -1,0 +1,70 @@
+.any?
+  if the block returns truthy the method returns true
+  can be used with arrays and hashes
+  
+.all
+  similar to any?
+  returns true if all returns from iterations of block are truthy
+  arrays and hashes
+
+.each_with_index
+  two arguements
+  item and index
+  when used on array the first item is now an array representing key and value
+  returns original array
+  
+obj1.each_with_object(obj2) { |item_obj1, obj2| stuff }
+  two arguements
+  between the parathensis is a collection object
+  obj1 is what we are iterating over
+  obj2 is where we store stuff
+  item_obj1 is the item from looping through obj1
+  returns obj2
+  
+  hash >> first arguement is an array
+      or you can use parathensis to capture both terms
+
+.first(optional number)
+  returns the first term if no arguement given
+  returns the first ___ arguements
+  
+  used on hashes
+    returns a nested array
+      change back to hash using .to_h
+    ruby preserves order in hashes since Ruby1.9
+    
+.include?
+  checks if arguement is part of collection
+  
+  hashes
+    only checks keys == .key? == .has_key?
+
+.partion
+  divides collection into two elements
+  return value is nested array
+  usually use parallel assignment to capture arrays with named variables
+
+      Example  
+      odd, even = [1, 2, 3].partition do |num|
+        num.odd?
+      end
+      
+      odd  # => [1, 3]
+      even # => [2]
+  used with hash
+    return will still be an array
+    change back to hash using .to_h
+
+.count(item) or .count {|obj| block }
+  returns integer
+  if arguement given counts number of items in collection that equal item
+  if block given counts number of items that return a truthy block
+  
+.reject{|obj| block}  array
+  returns value that block returns falsey
+  
+.reduce  == .inject
+  combines all elements of caller using a binary operation
+  
+  example
+  ages.values.inject(:+) # => 6174

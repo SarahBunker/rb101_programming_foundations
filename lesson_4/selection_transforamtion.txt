@@ -1,0 +1,15 @@
+loops
+  iteration [see loops_and_iteration]
+  selection
+  transformation
+  
+selection: picking items based on criteria
+transformation: manipulating every element in the collection
+
+basics of looping: a loop, a counter, a way to retrieve the current value, and a way to exit the loop
+  - also used for transformations and selections
+  
+transformations
+  - important to note if it is happening with a copy or original array
+  
+generally selection and transformations moved to convience methods

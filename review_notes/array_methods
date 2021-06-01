@@ -1,0 +1,22 @@
+.shift ~ removes the first element of array and returns it
+.unshift ~ adds element to start of array
+.pop ~ removes the last element of array and returns it
+.push ~ adds element to end of array, returns the array
+.append ~ alias to push
+
+--------------------------
+### Sum values of arrays
+when summing the values of an array you can use .reduce or .sum 
+
+array_sample.reduce {|sum,num| sum + num}
+
+or 
+
+array_sample.sum
+
+---------------------
+
+.empty? determine if array is empty 
+.min    returns minimum value
+.index  returns index of first item that the item matches the provided object
+      or returns index of first item that the block returns true

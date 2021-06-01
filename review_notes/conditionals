@@ -1,0 +1,3 @@
+if
+  when none of the conditions in an if statement evaluate as true > if statement returns nil
+  
