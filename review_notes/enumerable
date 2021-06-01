@@ -65,6 +65,8 @@ obj1.each_with_object(obj2) { |item_obj1, obj2| stuff }
   
 .reduce  == .inject
   combines all elements of caller using a binary operation
+  returns the total
   
   example
-  ages.values.inject(:+) # => 6174
+  ages.values.inject(:+) # => 6174 (ages is a hash, values gets array of ages)
+  (5..10).inject { |sum, n| sum + n }
