@@ -20,3 +20,5 @@ array_sample.sum
 .min    returns minimum value
 .index  returns index of first item that the item matches the provided object
       or returns index of first item that the block returns true
+.product   returns array of all possible combinations
+.sort      sorts a to z or smallest to largest

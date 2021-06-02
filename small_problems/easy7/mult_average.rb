@@ -13,7 +13,7 @@ plot:
 =end
 
 def show_multiplicative_average(array)
-  multiply_result = array.reduce(:*)
+  multiply_result = array.reduce(:*) #{|sum,num| sum *= num}
   result = (multiply_result.to_f/array.length).round(3)
   p sprintf("%.3f", result)
 end

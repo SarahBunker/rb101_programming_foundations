@@ -1,0 +1,4 @@
+
+
+float with three digits
+sprintf("%.3f", result)
