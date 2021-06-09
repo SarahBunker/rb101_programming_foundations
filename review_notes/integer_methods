@@ -1,2 +1,2 @@
 .even?
-.odd? returns true if interger is odd
+.odd? returns true if integer is odd

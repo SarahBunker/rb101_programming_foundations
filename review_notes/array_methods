@@ -22,3 +22,17 @@ array_sample.sum
       or returns index of first item that the block returns true
 .product   returns array of all possible combinations
 .sort      sorts a to z or smallest to largest
+.clear  removes all elements from self
+.count  returns number of elements
+      if arguement is given counts # of elements which equal object
+      if block given counts the # of elements that block returns true
+.delete(obj)   deletes all items equal to obj
+      returns last deleted item  || nil if no matching item is found
+      if given optional block returns result of block if item not found
+.delete_at     deletes at specified index or nil if index is out of range
+.delete_if {|item| block}     deletes elements of self where block returns true
+
+#ANKI
+
+%w( a e i o u) => ["a","e", "i", "o", "u"]
+("a".."z").to_a => array of all alphabet letters

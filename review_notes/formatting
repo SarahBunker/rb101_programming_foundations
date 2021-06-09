@@ -1,4 +1,12 @@
-
-
 float with three digits
 sprintf("%.3f", result)
+
+multiline printing
+docstrings
+<< FOO
+first line
+second line
+interp #{}
+FOO
+
+#ANKI

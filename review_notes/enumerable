@@ -1,3 +1,5 @@
+#ANKI
+
 .any?
   if the block returns truthy the method returns true
   can be used with arrays and hashes

@@ -1,3 +1,21 @@
+#ANKI
+
+Control expressions
+
 if
   when none of the conditions in an if statement evaluate as true > if statement returns nil
+  
+ternary if
+boolean? result if true : result if false
+
+Case Statement
+  can use to compare against patterns (A?)
+  or as if/elsif expression
+  can put multiple conditions on the same line
+  the first when that matches is executed and all other cases ignored.
+  "else" and "then" are optional
+  putting when on same line use then
+    when 3    then puts "a is three"
+  result of case is last value executed in expression
+  
   

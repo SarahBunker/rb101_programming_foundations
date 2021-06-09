@@ -2,7 +2,7 @@ loop do... end            #must include a break statement
 while Boolean ... end     #evaluate until condition is false
 until Boolean ... end     #evaluate until condition is true
 for i in range ... end    #typically used to iterate over a collection (for example a range, or aray)
-Num.times                 #counts from 0 to 0ne less then the specified number
+Num.times                 #counts from 0 to one less then the specified number
 
 break     #exits current loop
 next      #goes to next iteration imediately, skipping the rest of the current iteration 
@@ -69,4 +69,6 @@ end
   > defined in array or method class
 .map and .select
   > this method comes from enumerable class which is made avalible to the array and hash class
+  
+#ANKI
 

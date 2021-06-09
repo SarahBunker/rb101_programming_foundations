@@ -1,0 +1,4 @@
+#ANKI
+.each_char
+  iterates through each char
+  returns self
