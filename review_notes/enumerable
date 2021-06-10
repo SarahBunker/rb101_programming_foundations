@@ -1,7 +1,7 @@
 #ANKI
 
 .any?
-  if the block returns truthy the method returns true
+  if any iteration of the block returns truthy the method returns true
   can be used with arrays and hashes
   
 .all
@@ -12,7 +12,7 @@
 .each_with_index
   two arguements
   item and index
-  when used on array the first item is now an array representing key and value
+  when used on hash the first item is now an array representing key and value
   returns original array
   
 obj1.each_with_object(obj2) { |item_obj1, obj2| stuff }
@@ -41,7 +41,7 @@ obj1.each_with_object(obj2) { |item_obj1, obj2| stuff }
   hashes
     only checks keys == .key? == .has_key?
 
-.partion
+.partion (A?)
   divides collection into two elements
   return value is nested array
   usually use parallel assignment to capture arrays with named variables
@@ -72,3 +72,5 @@ obj1.each_with_object(obj2) { |item_obj1, obj2| stuff }
   example
   ages.values.inject(:+) # => 6174 (ages is a hash, values gets array of ages)
   (5..10).inject { |sum, n| sum + n }
+  
+  #ANKI

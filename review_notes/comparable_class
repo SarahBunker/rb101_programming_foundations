@@ -1,7 +1,7 @@
-#ANKI
-
 this class is used for things that can be ordered
 
 <,>...
 
-.between?(min,max)
+.between?(min,max) method to determine if self is between two values
+
+#ANKI

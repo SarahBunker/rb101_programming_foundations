@@ -8,7 +8,7 @@ if
 ternary if
 boolean? result if true : result if false
 
-Case Statement
+Case Statement (A?)
   can use to compare against patterns (A?)
   or as if/elsif expression
   can put multiple conditions on the same line
@@ -19,3 +19,4 @@ Case Statement
   result of case is last value executed in expression
   
   
+#ANKI

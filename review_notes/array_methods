@@ -32,7 +32,8 @@ array_sample.sum
 .delete_at     deletes at specified index or nil if index is out of range
 .delete_if {|item| block}     deletes elements of self where block returns true
 
-#ANKI
-
 %w( a e i o u) => ["a","e", "i", "o", "u"]
 ("a".."z").to_a => array of all alphabet letters
+
+
+#ANKI

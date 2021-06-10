@@ -2,3 +2,5 @@
 .each_char
   iterates through each char
   returns self
+  
+.chr returns one character string at beginning of the string
