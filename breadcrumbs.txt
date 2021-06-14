@@ -3,8 +3,7 @@
 
 practice problems
 cd rb101_programming_foundations/small_problems/easy9
-
-to catch up complete set 10
+Next up complete set 10
 
 
 ----------------------------------------

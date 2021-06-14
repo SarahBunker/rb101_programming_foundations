@@ -31,6 +31,14 @@ array_sample.sum
       if given optional block returns result of block if item not found
 .delete_at     deletes at specified index or nil if index is out of range
 .delete_if {|item| block}     deletes elements of self where block returns true
+.find_index(obj)   returns index of first object in ary that equals obj. given as arguement
+.index(obj)       returns "", returns nil if no object found
+.flatten   returns new array that is one demensional flattening of self
+.insert(index,obj) inserts object before the element with the given index
+.join(separator=$,) returns a string of the array separated by the char or no space
+.last(n) returns last element(s) of array
+.first(n) returns the first element(s) of array [take]
+.max  returns obj with maximum value
 
 %w( a e i o u) => ["a","e", "i", "o", "u"]
 ("a".."z").to_a => array of all alphabet letters
