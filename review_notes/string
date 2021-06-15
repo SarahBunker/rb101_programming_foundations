@@ -4,3 +4,4 @@
   returns self
   
 .chr returns one character string at beginning of the string
+.ord shows ASCII position, important for sorting strings

@@ -12,5 +12,5 @@ Sorting
     sort then throws error
   string comparison done based on position in ASCII table
   
-  
+see google docs for notes
 =end
