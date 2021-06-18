@@ -356,4 +356,80 @@ p a == [[1, 8, 3], [1, 6, 7], [1, 4, 9]]
 
 p "----------------"
 p "#14"
+=begin
+return nested array from hash, capitializing and using uppercase for specific values
+in: hash array
+out: nested array of strings
+rules:
+  sizes are uppercase
+  colors are capitalized
+  keep colors in subarray
+  
+plot:
+access each value
+access the colors value
+iterate through the colors array
+capitalize
+add array to new array
+access the size string
+uppercase the string
+add string to new array
+return new array
+=end
+hsh = {
+  'grape' => {type: 'fruit', colors: ['red', 'green'], size: 'small'},
+  'carrot' => {type: 'vegetable', colors: ['orange'], size: 'medium'},
+  'apple' => {type: 'fruit', colors: ['red', 'green'], size: 'medium'},
+  'apricot' => {type: 'fruit', colors: ['orange'], size: 'medium'},
+  'marrow' => {type: 'vegetable', colors: ['green'], size: 'large'},
+}
+a =  hsh.map do |_,value|
+  if value[:type] == "fruit"
+    value[:colors].map {|color| color.capitalize}
+  elsif value[:type] == "vegetable"
+    value[:size].upcase
+  end
+end
 
+p a
+#p array_color_size
+#p array_color_size == [["Red", "Green"], "MEDIUM", ["Red", "Green"], ["Orange"], "LARGE"]
+
+#when getting something from map or select always assign it to a variable before
+#printing it or use parenthesis
+
+p "-----------------"
+p "# 15"
+
+=begin
+from a nested array with subhashes return only hashes with all even integers
+in: array, sub elements are hashes with multiple key/value pairs
+out: array with less sub elements
+
+plot:
+selection
+access each element of array (hash)
+access the values of each key (array)
+access the elements of each array (integer)
+determine if all elements are even
+return hashes where all elements of every arrays are even
+
+=end
+
+arr = [{a: [1, 2, 3]}, {b: [2, 4, 6], c: [3, 6], d: [4]}, {e: [8], f: [6, 10]}]
+
+array_storage = []
+
+a = arr.map do |hsh|
+  hsh.select do |_,value|
+    value.all? {|int| int.even?}
+  end
+end
+
+a.each do |hsh|
+  if hsh != {}
+    array_storage << hsh
+  end
+end
+
+p array_storage
