@@ -64,7 +64,6 @@ def hex_to_single_dec(char)
   #ERROR message?
 end
 #-------------------
-#fix me
 def rand_num_from_hex_length(int)
   min_hex = find_smallest_ndigit_hex(int)
   max_hex = find_largest_ndigit_hex(int)
@@ -160,4 +159,8 @@ p rand_num_from_hex_length(12)
 =begin
 .key(value)
 Numeric#divmod
+=end
+
+=begin
+Their solution was a lot smaller and used iteration to select elements from possible values
 =end

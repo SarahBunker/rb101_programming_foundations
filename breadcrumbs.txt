@@ -3,7 +3,7 @@
 
 practice problems
 cd rb101_programming_foundations/small_problems/easy9
-Next up complete set 10
+Complete Medium 1
 
 
 ----------------------------------------
@@ -13,5 +13,5 @@ building a shody house
   
 -----------------------------------------------
 /rb101_programming_foundations/lesson_4/collection_basics.rb
-cd rb101_programming_foundations/lesson_4
+cd rb101_programming_foundations/lesson_5
 
