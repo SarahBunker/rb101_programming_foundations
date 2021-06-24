@@ -1,0 +1,13 @@
+range: seems like I have to write it from biggest to smallest and then reverse the values if
+I want it in the opposite order.
+
+(-10..1).to_a.reverse
+(1..-10) << doesn't work
+
+using range with case statements to create intervals while doing a case statement
+  when 90..100 then "A"
+  when 80..89 then "B"
+  when 70..79 then "C"
+  when 60..69 then "D"
+  when 0 ..59 then "F"
+  end

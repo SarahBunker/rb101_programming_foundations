@@ -72,3 +72,10 @@ end
   
 #ANKI
 
+you can use block parameters to access subarray elements
+def buy_fruit(g_list)
+  g_list.map {|fruit, quant| [fruit] * quant} .flatten
+end
+
+p buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]]) ==
+  ["apples", "apples", "apples", "orange", "bananas","bananas"]

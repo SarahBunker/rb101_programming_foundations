@@ -1,0 +1,2 @@
+divmod(number) > array
+returns array of the quotient and the modulus by dividing self by number

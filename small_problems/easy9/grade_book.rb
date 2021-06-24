@@ -41,3 +41,7 @@ end
 p get_grade(95, 90, 93) == "A"
 p get_grade(50, 50, 95) == "D"
 p get_grade(95, 90, 133) == "A"
+
+=begin
+using range with case statements to create intervals while doing a case statement
+=end

@@ -1,2 +1,9 @@
 .even?
 .odd? returns true if integer is odd
+
+#ANKI
+.digits > array of digits int's place-value representation
+12345.digits      #=> [5, 4, 3, 2, 1]
+note that the digits go ones, tens, hundreds...
+
+#abs ~ returns absolute value of integer
