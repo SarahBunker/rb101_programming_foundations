@@ -1,0 +1,3 @@
+if you are mutating the elements in the array as you are itterating through the array
+Q does that break the cardinal rule of not mutating the array you are itterating through?
+A ???? no because you are mutating the elements not the array itself?  

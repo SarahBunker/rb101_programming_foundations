@@ -2,7 +2,7 @@
 20 exercises (2 sets) per lesson
 
 practice problems
-cd rb101_programming_foundations/small_problems/med1
+cd rb101_programming_foundations/small_problems/med2
 Complete Medium 1
 
 
@@ -13,5 +13,5 @@ building a shody house
   
 -----------------------------------------------
 /rb101_programming_foundations/lesson_4/collection_basics.rb
-cd rb101_programming_foundations/lesson_5
+cd rb101_programming_foundations/lesson_6
 

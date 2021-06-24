@@ -1,0 +1,8 @@
+first, last = [last, first + last] ~ assigning two variables at the same time without intermediary
+
+#their solution used
+#all_digits[-n..-1] = rotate_array(all_digits[-n..-1])
+#they assigned the last digits with the rotated digits.
+>> you can assign digits while accessing them, don't need intermediary
+
+You don't have to remove items from array to itterate through them

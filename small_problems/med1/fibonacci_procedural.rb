@@ -22,3 +22,7 @@ p fibonacci(100) == 354224848179261915075
 answer =  fibonacci(100_001) # => 4202692702.....8285979669707537501
 p answer.to_s.start_with?("4202692702")
 p answer.to_s.end_with?("8285979669707537501")
+
+#refactor solution to use this code
+# a, b = [b,a]  >> reassigning two variables based on code using each other
+#also use .upto
