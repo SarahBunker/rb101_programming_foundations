@@ -1,0 +1,48 @@
+###Ruby syntatical Sugar
+  makes the code easier to read but often hides what the code is doing
+
+ex: Describe the following code
+'puts "hello"'
+
+'puts' is a method invocation and the string '"Hello"' is passed to the method.
+
+  could pass a local variable or a method
+  ruby defaults to the local variable unless parenthesis are used after the method
+  parenthesis are optional  <= syntatical sugar
+Co  
+Global variables start with a dollar sign
+
+Object oriented programming
+'name=' is a method invocation
+
+  this is another case where we don't use parenthesis
+
+### Where does code come from?
+Core API
+  loaded into the Ruby runtime that allows you to invoke methods
+  organized into classes and modules  == ways to organize methods
+  kernel: core, important module
+    puts
+  hashes, arrays, strings... are methods are availble to us
+
+Standard API
+  not automatically loaded
+  access by requiring it
+  
+Gems
+  augment, replace, or new info
+  external libraries
+  ex 'require "pry"'
+  
+Adding codes from other programs
+  ruby on rails
+
+Metaprogramming
+  creating methods on the fly that you can't access
+
+###local variable scope
+Local variables initialized outside the block are accessible inside the block
+if it is initialized inside the block then it is not accessible outside the block
+accessing the variable inside the block can allow us to mutate the variable
+
+initialition and reassignment has the same syntax
