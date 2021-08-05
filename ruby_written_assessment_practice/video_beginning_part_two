@@ -1,0 +1,74 @@
+###pass by reference vs pass by value
+
+methods create their own scope
+
+'''
+def amethod(param)
+  param += " world"
+end
+
+str = "hello"
+amethod(str)
+
+p str
+'''
+
+'amethod' returns a new string '"hello world"' because of the variable reassignment
+
+'+' is a method that is not distructive it returns a new object
+
+'''
+def amethod(param)
+  param += " world"
+  param << " universe"
+end
+
+str = "hello"
+amethod(str)
+
+p str
+'''
+
+'p str' outputs the string '"hello"' because param is reassigned on line '22' before it is
+mutated on line '23'
+'amethod' returns the string '"hello world universe"'
+
+variables point to objects
+objects are things that take space in memory
+
+'''
+a = "hello"
+b = a
+'''
+
+this is not reassignment. There is only one object
+
+'a = "not here"'
+
+This is reassignment because 'a' points to a different object.
+
+https://ruby-doc.org/core-2.6.3/String.html#method-i-2B
+ruby doc for string '+' method
+
+https://ruby-doc.org/core-2.6.3/String.html#method-i-3C-3C
+ruby doc for string '<<' method
+
+KEY POINT
+'=' is reassignment
+'+' is not
+'+=' is reassignment
+
+When you pass a variable into a method it works similar to initalization
+
+'''
+def prefix(str)
+  "Mr. " + str
+end
+
+name = "Joe"
+name = prefix(name)
+
+puts name
+'''
+
+'str' is set to the string "Joe" on line '64'
