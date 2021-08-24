@@ -111,3 +111,37 @@ p "The local variable 'cut_off' was initialized outside the block, but it is sti
 p "by the block on line '98' and line '101'"
 p "The inner scope of the block can access variables from the outer scope, but the outer scope"
 p "cannot access the variables from the inner scope."
+
+ # show how local variable scope works within a method definition
+ 
+ #num2 = 5
+ 
+ def addition(num1, num2)
+   total = num1 + num2 #num2 is initialize outside the method and is not accible here.
+ end
+ p addition(3,4)
+ 
+p total #total is initialized inside the method definition and is not accessible here.
+
+# show how local variable scope works with blocks
+
+letters = ("a".."z").to_a
+numbers = (1..letters.size).to_a
+
+letters.each_with_index{|char,index| puts "the letter #{char} is the #{numbers[index]} letter."}
+
+########### Variable Shadowing ##########
+# show an example of variable shadowing, and show how to fix it.
+
+# the following example tries to use the local variable name to indicate John Doe's name and his
+# work. The block won't be able to access the outer scope variable.
+name = "John Doe"
+work_hash = {"Ace Hardware" => 25}
+
+work_hash.each { |name, wage| puts "#{name} works at #{name} store for $#{wage}/hr."}
+
+# To fix this we can change one of the variables names to be more descriptive.
+name = "John Doe"
+work_hash = {"Ace Hardware" => 25}
+
+work_hash.each { |store_name, wage| puts "#{name} works at #{store_name} store for $#{wage}/hr."}

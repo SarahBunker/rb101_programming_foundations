@@ -1,0 +1,154 @@
+Example 1
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+
+a = “Hello”
+b = a
+a = “Goodbye”
+puts a
+puts b
+
+`Line 7` outputs the string `:Goodbye"` and returns `nil`.
+`Line 8` outputs the string `"Hello"` and returns `nil`.
+On `line 7` the method `puts` outputs a string representation of the arguement in this case the value of the object reference by local variable `a`. On `line 4` variable `a` is initialized to a string object with value `"Hello"`. On `line 6` local variable `a` is reassigned to a string object with value `"Goodbye"`, so on `line 7` the local variable `a` references a string object with value `"Goodbye"`. This is the value passed to the `puts` method and outputted.
+On `line 5` the local variable `b` is intialized and assigned to the object referenced by the local variable `a` which is a string object with value `"Hello"`. The reasignement of local variable `a` on `line 6` is not a mutating arguement and thus does not affect the value of local variable `b`. On `line 8` the value of the string object referenced by local variable `b` is `"Hello"`. This is passed to the method `puts` which outputs the string '"Goodbye"`.
+This demonstrates the concept of variables as pointers.
+
+
+
+Example 3
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = 4
+b = 2
+
+loop do
+  c = 3
+  a = c
+  break
+end
+
+puts a
+puts b
+
+This code outputs`"4"`, `"2"`. The `loop` and both `puts` return `nil`.
+Local variable `a` is initialized on `line 20` to an integer object with value `4`.  On `line 23-27` the method `loop` is called and passed the `do...end` block creating an inner scope. The local variable `c` is initialized to the integer object with value 3. On `line 25` the local variable `a` is reassigned to the object referenced by local variable `c`. On `line 29` this object is passed to the method `puts` which returns a string representation of the value of the arguement.
+Local variable `b` is initialized on `line 21` to an integer obeject with value `2`. On `line 30` this variable is passed to the method `puts` which returns a string representation of the value of the object.
+This example shows the concept of local variable scope because the local variable `a` was able to access the variable `c` even though the block passed to the method `loop` created a new scope.
+
+
+
+Example 5
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def greetings(str)
+  puts str
+  puts "Goodbye"
+end
+
+word = "Hello"
+
+greetings(word)
+
+
+This code outputs `"Hello"` and `"Goodbye"`. The method `greetings` returns `nil`.
+The method `greetings is defined on `lines 41-44` and accepts one arguement.
+The local variable `word` is initialized on `line 46` and assigned the string object `"Hello"`. This varaible is passed to the method `greetings` when it is invoked on `line 48`.
+The local variable `str` is assigned as the block parameter. This variable is passed to the method `puts` on `line 42` which outputs a string representation of the arguement and returns nil.
+The string object `"Goodbye"` is passed to the method `puts` on `line 43` which outputs a string representation of the arguement and returns nil.
+The call to the `puts` method is the last evaluated expression of the `greetings` method so the invocation of the method on `line 48` returns nil.
+This code demonstrates the concept of implicit return value of method invocations because the method returned the last evaluated expression since there was no explicit `return` call.
+
+
+Example 7
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = 'Bob'
+
+5.times do |x|
+  a = 'Bill'
+end
+
+p a
+
+This code outputs `"Bill"`. This code returns `"Bill"`.
+On `line 62` the local variable `a` is intialized to string object with value `"Bob"`. On `lines 64-65` the method `times` is invoked and passed the `do...end` block. Within the block the local variable `a` is reassigned to string object with value `"Bill"`. On line 68 this varaible is passed to the method `p` which outputs a string representation of the object and returns the object.
+This code demonstrates varaibles as pointers because the local variable `a` was able to be reassigned to a different string object on `line 65`.
+
+
+
+Example 1
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = 4
+b = 2
+
+2.times do |a|
+  a = 5
+  puts a
+end
+
+puts a
+puts b
+
+This code demostrates varaible shadowing where the inner scope of a method block can't access the outer scope variable because the local variable block parameter has the same name as the outer scope local variable.
+This code outputs `"5"`, `"5"`, `"4"`, `"2"`. This the `times` method returns `2`. Both `puts` return `nil`.
+The local variable `a` is initialized on `line 78` and assigned to the integer object with value `4`. On `lines 81-84` the method `times` is called with the `do...end` block. The block takes one arguement which has name `a`. This is a different variable then the local variable defined on `line 78`. On `line 82` the local variable `a ` is assigned to integer object with value 5 and passed to the `puts` method which outputs it as a string. This occurs once on each itteration, or two times.
+
+
+Example 3
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+animal = "dog"
+
+loop do |animal|
+  animal = "cat"
+  break
+end
+
+puts animal
+
+
+Example 1
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = "hi there"
+b = a
+a = "not here"
+
+What are a and b?
+
+This code does not have any outputs. There are no method calls, but each of the variables on `line 108-110` would return the value of the objects they reference, `"hi there"`, '"hi there"`, and `"not here"` respectively.
+Local variable `a` is initialized and assigned to string object with value `"hi there"` on `line 108`. On `line 110` local variable `a` is reassigned to string object with value `"not here"`. `a` at the end of the code still references that object.
+Local variable `b` is initialized to the same reference as local varaible `a` which references string object with value `"hi there"` on `line 109`. The reasignement of `a` comes after and is not mutating, so at the end of the code `b` still references the string object `"hi there"`.
+
+This code demonstrates variables as pointers.
+
+Example 3 
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = [1, 2, 3, 3]
+b = a
+c = a.uniq
+
+What are a, b, and c? What if the last line was `c = a.uniq!`?
+
+
+
+Example 5
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = 5.2
+b = 7.3
+
+a = b
+
+b += 1.1
+
+What is `a` and `b`? Why? 
+
+
+
+Example 7
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def plus(x, y)
+  x = x + y
+end
+
+a = 3
+b = plus(a, 2)
+
+puts a
+puts b
+

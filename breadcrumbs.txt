@@ -12,6 +12,10 @@ building a shody house
   review lessons throughly
   
 -----------------------------------------------
-/rb101_programming_foundations/lesson_4/collection_basics.rb
-cd rb101_programming_foundations/lesson_6
+/rb101_programming_foundations/ruby_written_assessment_practice/video_beginning_part_two
+cd rb101_programming_foundations/ruby_written_assessment_practice
 
+-----------------------------
+token
+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
+expires in Nov

@@ -84,13 +84,45 @@ end
 scream("Yippeee")
 
 def cap_10(string)
-  if string.size >= 10
-    return string.upcase
+  if string.size > 10
+    string.upcase
   else
-    return string
+    string
   end
 end
 
 puts cap_10("hello world")
 puts cap_10("")
 puts cap_10("l;ksjdfl;anmm,e")
+
+puts
+
+##############################
+#hashes
+family = {  uncles: ["bob", "joe", "steve"],
+            sisters: ["jane", "jill", "beth"],
+            brothers: ["frank","rob","david"],
+            aunts: ["mary","sally","susan"]
+          }
+          
+immediate_family = family.select {|title| title == :sisters || title == :brothers}
+p immediate_family
+
+puts "printing all the keys"
+family.keys.each {|title| p title}
+puts "printing all the values"
+family.values.each {|name_array| p name_array}
+family.each do |title, name_array|
+  puts ""
+  puts "All the #{title.to_s.capitalize}'s are:"
+  name_array.each do |name|
+    puts name.capitalize + " "
+  end
+end
+
+puts ""
+
+person = {name: 'Bob', occupation: 'web developer', hobbies: 'painting'}
+puts person[:name]
+
+puts person.has_value?('web developer')
