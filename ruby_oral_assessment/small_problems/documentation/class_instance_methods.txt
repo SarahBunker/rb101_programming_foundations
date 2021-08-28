@@ -1,0 +1,26 @@
+Locate the ruby documentation for methods File::path and File#path. How are they different?
+
+Documentation copied
+
+::path
+path(path) => string
+returns the string representation of the path
+
+#path
+path => filename
+to_path => filename
+
+Returns the pathname used to create `file` as a string. Does not normalize the name.
+The pathname may not point to the file corresponding to file. For instance, the pathname becomes void when the file has been moved or deleted.
+
+This method raises IOError for a file created using File::Constants::TMPFILE because they don't have a pathname.
+
+File.new("testfile").path  #=> "testfile"
+File.new("/temp/../tmp/xxx","w").path #=> "/temp/../tmp/xxx"
+
+Explanation:
+for ::path it is a class method
+and during implementation you are passing a path and it returns that path as a string
+
+for #path it is a instance method
+and during implementation it is called on a file and returns the value stored by pathname.
