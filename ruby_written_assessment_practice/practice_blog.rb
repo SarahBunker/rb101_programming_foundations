@@ -1,8 +1,8 @@
 #What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-a = 'hello'
-b = a
-a = 'goodbye'
+#a = 'hello'
+#b = a
+#a = 'goodbye'
 
 =begin
 Local variable `a` is inizialized to string object with value `'hello'` on line `1`.
@@ -22,17 +22,17 @@ This code shows variables as pointers
 
 #What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-def example(str)
-  i = 3
-  loop do
-    puts str
-    i -= 1
-    break if i == 0
-  end
-end
-
-a = example('hello')
-p a
+#def example(str)
+#  i = 3
+#  loop do
+#    puts str
+#    i -= 1
+#    break if i == 0
+#  end
+#end
+#
+#a = example('hello')
+#p a
 
 =begin
 The methed `example` is defined on line `25-32` which takes one parameter. On line `34` the method `
@@ -56,16 +56,16 @@ of the method `example` is a loop which returns `nil`. So the return value of th
 #calling the method loop and passing in the do..end block as an arguement
 
 ### redoing this example because it has been a while
-def example(str)
-  i = 3
-  loop do
-    puts str
-    i -= 1
-    break if i == 0
-  end
-end
-
-example('hello')
+#def example(str)
+#  i = 3
+#  loop do
+#    puts str
+#    i -= 1
+#    break if i == 0
+#  end
+#end
+#
+#example('hello')
 
 =begin
 On `lines 59-66 we are defining the method `example` which takes one parameter.
@@ -79,16 +79,16 @@ The code outputs string `hello` 3 times and returns nil.
 =end
 
 # What will this code output? Why
-a = 4
-
-loop do
-  a = 5
-  b = 3
-  break
-end
-
-puts a
-puts b
+#a = 4
+#
+#loop do
+#  a = 5
+#  b = 3
+#  break
+#end
+#
+#puts a
+#puts b
 =begin
 This code will output 4 and raises an error, undefined local variable or method b.
 The local variable `a` is initialized on `line 82` and is accessible to the `puts` method on `line 90`.
@@ -97,17 +97,17 @@ The local variable `b` is initialized on `line 86` and is in the inner scope whi
 
 # What will this code output and why?
 
-a = 4
-b = 2
-
-loop do
-  c = 3
-  a = c
-  break
-end
-
-puts a
-puts b
+#a = 4
+#b = 2
+#
+#loop do
+#  c = 3
+#  a = c
+#  break
+#end
+#
+#puts a
+#puts b
 =begin
 This code will output integers `3` and `2`. This code will return `nil`
 Local variable `a` is initialized to integer `4` on `line 100`. `a` is reassigned to the object referenced by local variable `c`. `c` was initialized to integer `3` on `line 104`, so the object referenced by local variable `a` has a value of `3`. The reference to this value is passed to the methods `puts` on `line 109`.
@@ -116,11 +116,11 @@ Local variable `a` is initialized to integer `4` on `line 100`. `a` is reassigne
 
 # What are the outputs and returns of the following code?
 
-[1, 2, 3, 4].each { |num| puts num }
-
-[1, 2, 3, 4].map { |num| puts num }
-
-[1, 2, 3, 4].select { |num| puts num }
+#[1, 2, 3, 4].each { |num| puts num }
+#
+#[1, 2, 3, 4].map { |num| puts num }
+#
+#[1, 2, 3, 4].select { |num| puts num }
 
 =begin
 
@@ -147,3 +147,15 @@ The third example returns an empty array because the method `select` uses the re
 On `line 119` the method `each` is called on the array with elements of integers `1-4`. The method is passed the block denoted by `{...}`. The local variable `num` is defined as the block parameter. Within the block the method `puts` is called with the local variable `num` passed as an argument.
 
 =end
+
+
+
+arr1 = ["a", "b", "c"]
+arr2 = arr1.dup
+arr2.map! do |char|
+  char.upcase
+end
+
+puts arr1 
+puts arr2
+

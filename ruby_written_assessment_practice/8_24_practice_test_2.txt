@@ -1,0 +1,115 @@
+Example 4
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def example(str)
+  i = 3
+  loop do
+    puts str
+    i -= 1
+    break if i == 0
+  end
+end
+
+example('hello')
+
+
+Example 8
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+animal = "dog"
+
+loop do |_|
+  animal = "cat"
+  var = "ball"
+  break
+end
+
+puts animal
+puts var
+
+
+#Variables as pointers
+Example 2
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = "hi there"
+b = a
+a << ", Bob"
+What are a and b?
+
+
+Example 6
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def test(str)
+  str  += '!'
+  str.downcase!
+end
+
+test_str = 'Written Assessment'
+test(test_str)
+
+puts test_str
+
+
+
+Example 10
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def cap(str)
+  str.capitalize!   # does this affect the object outside the method?
+end
+
+name = "jim"
+cap(name)
+puts name 
+
+
+Example 2
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def fix(value)
+  value = value.upcase
+  value.concat('!')
+end
+
+s = 'hello'
+t = fix(s)
+What values do `s` and `t` have? Why?
+
+
+Example 6
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def a_method(string)
+  string << ' world'
+end
+
+a = 'hello'
+a_method(a)
+
+p a
+
+
+Example 10
+def add_name(arr, name)
+  arr = arr << name
+end
+
+names = ['bob', 'kim']
+add_name(names, 'jim')
+puts names
+
+
+Example 4
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+new_array = arr.select do |n| 
+  n + 1
+  puts n
+end
+p new_array
+
+
+Example 8
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+new_array = arr.map do |n| 
+  n > 1
+end
+p new_array

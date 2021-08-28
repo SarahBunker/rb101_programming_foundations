@@ -1,0 +1,152 @@
+1. #####Example 2
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = 4
+
+loop do
+  a = 5
+  b = 3
+
+
+  break
+end
+
+puts a
+puts b
+
+This code returns `nil` because that is the return of the `puts` method, and an error because local variable `b` is not accessible on line `14`. It outputs `5`
+The error statement is because the local variable `b` was initialized within the block passed to the `loop` method on line `7`. This demonstrate local variable scope, where a new scope is created with a block following method invocation.
+
+
+2. ######Example 6
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+arr = [1, 2, 3, 4]
+
+counter = 0
+sum = 0
+
+loop do
+  sum += arr[counter]
+  counter += 1
+  break if counter == arr.size
+end 
+
+puts "Your total is #{sum}"
+
+This code returns `nil` because that is the return of the `puts` method. This code outputs `10` because each iteration through the loop adds each successive element to the `sum` until the `counter` reaches the size of the array. This demostrates local variable scope because local variable `sum` is accessible on line `33` because it was initiazed on line `25` outside of the inner scope created by the block dilimited by the `do..end` on lines `27-31`.
+
+#Variable Shadowing
+3. ######Example 2
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+n = 10
+
+1.times do |n|
+  n = 11
+end
+
+puts n
+
+This is variable shadowing. The code returns `nil` because that is what the method `puts` returns, and this code outputs `10` because the local variable `n` is initialized on line `40` to value `10`. The local variable is not reasigned on line `43` because of variable shadowing. The block parameter and the outside local variable have the same name so the block defaults to using the block parameter variable instead of the outside variable.
+
+#Variables as pointers
+4. #######Example 4
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def test(b)
+  b.map {|letter| "I like the letter: #{letter}"}
+end
+
+a = ['a', 'b', 'c']
+test(a)
+
+This code returns a new array `["I like the letter: a","I like the letter: b","I like the letter: c"]`. It doesn't have an output. This demostrates the concept of implicit return value of blocks. 
+The last evaulated expression in the definition of the method `test` is a call to the method `map` which returns a new array with the return values of the block passed as an arguement. Each of the letter elements from array `a` is passed to the block which returns a string. These strings are stored in an array that is returned by `map` and then returned from `test`.
+
+5. ######Example 8
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def increment(x)
+  x << 'b'
+end
+
+y = 'a'
+increment(y) 
+
+puts y
+
+This demostrates mutating methods. The method `<<` is mutating and so the variable passed into the method `increment` is mutated by adding the letter `b` to whatever object was passed to it. This also shows how Ruby acts as pass by reference because we were able to mutate the caller.
+The method `increment` returns the arguement with `b` appended to it. The method `puts` returns `nil`.
+The output of this code is `"ab"`.
+
+
+
+6. #######Example 12
+Link to example
+
+arr1 = ["a", "b", "c"]
+arr2 = arr1.dup
+arr2.map! do |char|
+  char.upcase
+end
+
+puts arr1 
+puts arr2
+
+FIX ME
+
+
+7 ########Example 4
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+def fix(value)
+  value = value.upcase!
+  value.concat('!')
+end
+
+s = 'hello'
+t = fix(s)
+What values do `s` and `t` have? Why?
+
+`s` has the value `"HELLO"`, and `t` has the value `"HELLO!"`. This code shows how reassignement is not a mutating method, but it matters when the reassignement happens.
+On line `98` `value.upcase!` mutates the local variable `value`. Then the reasult of that operation is reasigned to the variable `value`. `concat` is also mutating, but at this point it is mutating a variable that is pointing to a different object. This is why `s` is all capital letters but not the punctuation.
+
+
+8. #######Example 8
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = %w(a b c)
+a[1] = '-'
+p a
+
+This code outputs `["-","b","c"}` because `[]=` is a mutating method. It also returns the same thing because `p` returns the arguement passed to it. This shows a mutating method that is often confused as non mutating because of the presence of the equal sign.
+
+
+9. #######Example 2
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+arr.select { |n| n.odd? }
+
+This code returns a new array with the elements of the original array that are odd integers. It doesn't have an output. It demostrates how `select` is used for Selective itteration. Each element is passed to the block and the return value of the block is used to determine if the element is selected. Elements that return a value that evaluates to true are included.
+In this case the block is calling the method `odd?` which returns `true` when the element is odd.
+
+
+10. ########Example 6
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+arr.each { |n| puts n }
+
+This code returns the original array referenced by the local variable `arr`. The method `puts` returns `nil` but this doesn't matter because `each` always returns the calling collection. This code outputs each of the items in the array printed as string objects.
+`
+"1"
+"2"
+"3"
+...
+"10"
+`
+The method `puts` converts the arguements to strings and outputs to the console. This demostrates the use of the itterative method `each` and how this method returns the calling object and does not use the return value of the block.
+
+
+11. ########Example 10
+What does the following code return? What does it output? Why? What concept does it demonstrate?
+a = "hello"
+
+[1, 2, 3].map { |num| a }
+
+This code returns the array `["hello","hello","hello"]` because `map` returns a new array with the return values of the block stored as elements. The last expression of the block is the local variable `a` which was initialized on line `148` as a string object with value "hello". This value is then stored in the array for each iteration. This shows how the method `map` uses the return of the block to create the returned array.
