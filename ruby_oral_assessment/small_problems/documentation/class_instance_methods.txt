@@ -24,3 +24,8 @@ and during implementation you are passing a path and it returns that path as a s
 
 for #path it is a instance method
 and during implementation it is called on a file and returns the value stored by pathname.
+
+Solution:
+Fill::path is a class method and File#path is an instance method.
+Class methods are called on the class ex: File.path('bin')
+Instance methods are called on an object of the `File` class.
