@@ -40,17 +40,19 @@
 
 #1.upto(9){|i| puts i if i.even?}
 
-puts ">> Please enter an integer greater than 0:"
-int = gets.chomp.to_i
-puts ">> Enter 's' to compute the sum, 'p' to compute the product."
-input = gets.chomp.to_s.downcase
+#puts ">> Please enter an integer greater than 0:"
+#int = gets.chomp.to_i
+#puts ">> Enter 's' to compute the sum, 'p' to compute the product."
+#input = gets.chomp.to_s.downcase
+#
+#if input == "s"
+#  sum = (1..int).to_a.reduce(:+)
+#  puts "The sum of the integers between 1 and #{int} is #{sum}."
+#elsif input == "p"
+#  product = (1..int).to_a.reduce(:*)
+#  puts "The product of the integers between 1 and #{int} is #{product}."
+#else
+#  puts "Error, unknown input"
+#end
 
-if input == "s"
-  sum = (1..int).to_a.reduce(:+)
-  puts "The sum of the integers between 1 and #{int} is #{sum}."
-elsif input == "p"
-  product = (1..int).to_a.reduce(:*)
-  puts "The product of the integers between 1 and #{int} is #{product}."
-else
-  puts "Error, unknown input"
-end
+
