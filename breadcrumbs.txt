@@ -16,6 +16,4 @@ building a shody house
 cd rb101_programming_foundations/ruby_written_assessment_practice
 
 -----------------------------
-token
-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
-expires in Nov
+cd rb101_programming_foundations/ruby_oral_assessment/small_problems/easy4
