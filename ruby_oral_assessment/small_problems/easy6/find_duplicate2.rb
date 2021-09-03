@@ -33,7 +33,10 @@ example:
 
 =end
 
-def 
+def find_dup(array)
+  array.each{|item| return item if array.count(item) >= 2}
+end
+
 
 p find_dup([1, 5, 3, 1]) == 1
 p find_dup([18,  9, 36, 96, 31, 19, 54, 75, 42, 15,

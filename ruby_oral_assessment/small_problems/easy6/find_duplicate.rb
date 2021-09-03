@@ -1,13 +1,12 @@
 =begin
 #------------------------------------------------------------------------------
 PROBLEM:
-Find the duplicate using the method count
-
-input: 
-output: 
+find and return a duplicate value in an array of integers
+input: array of integers
+output: integer that was duplicated
 rules:
     Explicit requirements:
-      
+      known duplicate in array
     Implicit requirements:
       
 Unclear parts of problem?
@@ -23,17 +22,32 @@ ALGORITHM
 example:
 
 - define method
-- iterate through array
-- count the number of times the element occurs in the array
-- return the element if it occurs twice
-- 
+- initialize a new array
+- itterate through array
+    break if value is part of new array, returning the value
+-   store each value of the array in new array
+- return value that was part of new array
 - 
 - 
 - 
 
 =end
 
-def 
+def find_dup(array)
+  new_array =[]
+  result = nil
+  array.each do |item|
+    if new_array.include?(item)
+      result = item
+      break
+    end
+    new_array << item
+  end
+  result
+end
+
+p find_dup([1,2,3,4,1])
+
 
 p find_dup([1, 5, 3, 1]) == 1
 p find_dup([18,  9, 36, 96, 31, 19, 54, 75, 42, 15,
@@ -46,5 +60,3 @@ p find_dup([18,  9, 36, 96, 31, 19, 54, 75, 42, 15,
           85, 87, 51, 17, 66, 20, 28, 26,  2, 22,
           40, 23, 71, 62, 73, 32, 43, 24,  4, 56,
           7,  34, 57, 74, 45, 11, 88, 67,  5, 58]) == 73
-          
-
