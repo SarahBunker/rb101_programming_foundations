@@ -2,8 +2,7 @@
 20 exercises (2 sets) per lesson
 
 practice problems
-cd rb101_programming_foundations/small_problems/med2
-Complete Medium 1
+cd rb120_object_oriented_programming/exercises_RB120_oop/easy1
 
 
 ----------------------------------------
@@ -12,8 +11,4 @@ building a shody house
   review lessons throughly
   
 -----------------------------------------------
-/rb101_programming_foundations/ruby_written_assessment_practice/video_beginning_part_two
-cd rb101_programming_foundations/ruby_written_assessment_practice
-
------------------------------
-cd rb101_programming_foundations/ruby_oral_assessment/small_problems/easy4
+cd rb120_object_oriented_programming/lesson2_oop
